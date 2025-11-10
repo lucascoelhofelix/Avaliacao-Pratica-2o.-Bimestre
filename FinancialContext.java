@@ -1,21 +1,32 @@
 // FinancialContext.java
 /**
- * DTO que encapsula os parâmetros financeiros complexos (Contexto)
- * para serem compartilhados entre os diferentes algoritmos de risco.
+ * Contexto Complexo de Dados: Armazena os múltiplos parâmetros financeiros.
+ *
+ * Princípio SOLID:
+ * - SRP: Tem a responsabilidade única de agregar e gerenciar os dados de entrada
+ * para os cálculos de risco.
  */
 public class FinancialContext {
-    private final double portfolioValue;
-    private final double confidenceLevel;
-    private final int timeHorizonDays;
+    private double portfolioValue;
+    private double confidenceLevel; // Nível de confiança (e.g., 0.95, 0.99)
+    private int historicalWindowDays; // Janela de dados históricos
 
-    public FinancialContext(double portfolioValue, double confidenceLevel, int timeHorizonDays) {
+    // Construtor e Getters/Setters (omissos para brevidade)
+
+    public FinancialContext(double portfolioValue, double confidenceLevel, int historicalWindowDays) {
         this.portfolioValue = portfolioValue;
         this.confidenceLevel = confidenceLevel;
-        this.timeHorizonDays = timeHorizonDays;
+        this.historicalWindowDays = historicalWindowDays;
     }
 
-    // Getters para acessar os dados (omissos para brevidade, mas necessários)
     public double getPortfolioValue() { return portfolioValue; }
     public double getConfidenceLevel() { return confidenceLevel; }
-    public int getTimeHorizonDays() { return timeHorizonDays; }
+    public int getHistoricalWindowDays() { return historicalWindowDays; }
+
+    @Override
+    public String toString() {
+        return "Contexto Financeiro [Valor Portfólio: " + portfolioValue + 
+               ", Nível Confiança: " + confidenceLevel + 
+               ", Janela Histórica: " + historicalWindowDays + " dias]";
+    }
 }

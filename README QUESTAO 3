@@ -1,2 +1,6 @@
-Para modelar o controle da usina com estados complexos (DESLIGADA, OPERACAO_NORMAL, EMERGENCIA) e transições condicionais baseadas em dados de sensores (temperatura, falha de resfriamento), o State (Estado) foi o padrão ideal. O State Pattern isola o comportamento e a lógica de transição de cada estado em sua própria classe.
-Isso evitou a criação de grandes estruturas condicionais (switch cases) no Contexto principal (ReactorContext), garantindo o SRP (Responsabilidade Única). Adicionalmente, o tratamento do modo "Manutenção" foi gerenciado no Contexto, que temporariamente sobrepõe a delegação de estado, mantendo a lógica de estado limpa e coesa.
+Para modelar o controle da usina com estados complexos (DESLIGADA, OPERACAO_NORMAL, EMERGENCIA)
+e transições condicionais baseadas em dados de sensores (temperatura, falha de resfriamento),
+o State (Estado) foi o padrão ideal. O State Pattern isola o comportamento e a lógica de transição de cada estado em sua própria classe.
+Isso evitou a criação de grandes estruturas condicionais (switch cases) no Contexto principal (ReactorContext),
+garantindo o SRP (Responsabilidade Única). Adicionalmente, o tratamento do modo "Manutenção" foi gerenciado no Contexto,
+que temporariamente sobrepõe a delegação de estado, mantendo a lógica de estado limpa e coesa.

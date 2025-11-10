@@ -1,0 +1,4 @@
+Para lidar com a necessidade de ter múltiplos algoritmos de risco (Value at Risk, Expected Shortfall, Stress Testing) que pudessem ser trocados dinamicamente em tempo de execução, o padrão escolhido foi o Strategy (Estratégia).
+Este padrão permitiu definir uma interface comum (RiskCalculationStrategy) para todos os algoritmos.
+O Contexto principal (RiskProcessorContext) apenas mantém uma referência a essa interface e delega o cálculo, sem precisar conhecer a implementação detalhada.
+Isso garantiu que o sistema estivesse aberto à extensão (OCP) para novos algoritmos de risco e desacoplado (DIP) dos detalhes de cada cálculo.

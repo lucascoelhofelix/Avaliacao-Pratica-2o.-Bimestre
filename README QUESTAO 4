@@ -1,4 +1,7 @@
-A aplicação de múltiplas regras de validação em uma sequência com a necessidade de validações condicionais, rollback e um mecanismo de circuit breaker exigiu a implementação do Chain of Responsibility (Cadeia de Responsabilidade).
+A aplicação de múltiplas regras de validação em uma sequência com a necessidade de validações condicionais,
+rollback e um mecanismo de circuit breaker exigiu a implementação do Chain of Responsibility (Cadeia de Responsabilidade).
 Este padrão permitiu encadear os validadores de forma flexível.
-A classe AbstractValidator foi implementada usando o padrão Template Method para impor um esqueleto de algoritmo consistente, garantindo que regras transversais como timeout, a verificação do circuit breaker e o mecanismo de rollback (executado se falhas ocorressem adiante na cadeia)
+A classe AbstractValidator foi implementada usando o padrão Template Method para impor um esqueleto de algoritmo consistente,
+garantindo que regras transversais como timeout, a verificação do circuit breaker e o mecanismo de rollback
+(executado se falhas ocorressem adiante na cadeia)
 fossem aplicadas de maneira uniforme em todos os validadores, garantindo a robustez do sistema.
